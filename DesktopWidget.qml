@@ -36,7 +36,7 @@ Item {
     readonly property int edgeMargin: 32          // distance from the left/right edge
     readonly property int verticalMargin: 72      // distance from top/bottom (clears the bar)
 
-    readonly property int padding: 20             // same space on all four sides of the card
+    readonly property int padding: 10             // same space on all four sides of the card
     readonly property int ringSize: 76
     readonly property int ringThickness: 7
     readonly property int itemSpacing: 20         // gap between controllers
@@ -287,7 +287,7 @@ Item {
 
                         Image {
                             anchors.centerIn: ring
-                            width: root.ringSize * 0.46
+                            width: root.ringSize * 0.6
                             height: width
                             source: root.iconFor(entry.modelData)
                             sourceSize: Qt.size(width * 2, height * 2)
