@@ -1,0 +1,17 @@
+{
+  "id": "controller-battery",
+  "name": "Controller Battery",
+  "description": "Desktop widget showing the battery level of connected game controllers (PS5, Steam, ...) as rings. Drag to move, double-click to reset.",
+  "version": "1.1.1",
+  "type": "quickshell",
+  "ui": "main.qml",
+  "icon": "sports_esports",
+  "backgroundWidgets": [
+    {
+      "id": "controllerBattery",
+      "name": "Controller Battery",
+      "component": "DesktopWidget.qml",
+      "z": 4
+    }
+  ]
+}
