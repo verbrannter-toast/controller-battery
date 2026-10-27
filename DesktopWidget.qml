@@ -310,7 +310,7 @@ Item {
                     Text {
                         width: entry.cellWidth
                         horizontalAlignment: Text.AlignHCenter
-                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " ⚡" : (entry.full ? " ⚡" : ""))
+                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " 🗲" : (entry.full ? " 🗲" : ""))
                         color: entry.low ? root.warnColor : root.secondaryColor
                         font.pixelSize: 15
                         font.bold: true
