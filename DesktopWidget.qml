@@ -300,7 +300,7 @@ Item {
                             layer.enabled: root.tintIcons
                             layer.effect: MultiEffect {
                                 colorization: 1.0
-                                colorizationColor: entry.low ? root.warnColor : root.textColor
+                                colorizationColor: entry.low ? root.warnColor : root.accentColor
                             }
                         }
                     }
@@ -308,7 +308,7 @@ Item {
                     Text {
                         width: entry.cellWidth
                         horizontalAlignment: Text.AlignHCenter
-                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " ⚡" : (entry.full ? " ✓" : ""))
+                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " ⚡" : (entry.full ? " ⚡" : ""))
                         color: entry.low ? root.warnColor : root.textColor
                         font.pixelSize: 15
                         font.bold: true
