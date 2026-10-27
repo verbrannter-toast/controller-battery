@@ -41,3 +41,7 @@ ls /sys/class/power_supply/
 ```
 
 If a controller is not listed there, the widget cannot show it. This is a limitation of the kernel/UPower side, not of the widget.
+
+### Steam controller shows level at 100% while charging
+
+When the puck is connected to the PC and the controller is connected to the puck (charging) the battery level will always show 100%. This might be something detectable so the plugin can the show the charging status but I haven't looked into doing that yet.
