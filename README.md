@@ -4,5 +4,24 @@ This is a plugin for [caelestia-kde](https://github.com/ladybug-me/caelestia-kde
 
 It is movable across the whole desktop and saves its position across reboots. When just one or no controller is connected it simply resizes or hides completely.
 
-### Customizing
+## Customizing
 [DesktopWidget.qml](https://github.com/verbrannter-toast/controller-battery/blob/main/DesktopWidget.qml) features a ton of customizing options between line 32 and 56 which should make adjusting to your preference easy. If you want to use different icons to the default ones just replace them with the exact file name in `/icons`
+
+## Known limitations
+
+### Steam controller only shows up while Steam is closed
+
+The widget reads battery levels from UPower, which gets them from the kernel. For a wireless Steam controller (tested with the Steam Controller Puck, `28de:1304`), the kernel's `hid-steam` driver exposes a battery only while the Steam client is **not** running. As far as I can tell, the driver steps aside when Steam opens the controller directly (Steam Input), and the battery entry disappears until Steam is closed.
+
+- **Steam running:** the Steam controller is missing from the widget (and from `upower -e`). Steam's own UI still shows its battery level.
+- **Steam closed:** the controller appears with its battery level as soon as it is awake and connected.
+- **PS5 (DualSense):** not affected; it is exposed by the `hid-playstation` driver whether or not Steam is running.
+
+To check what your system exposes:
+
+```bash
+upower -e
+ls /sys/class/power_supply/
+```
+
+If a controller is not listed there, the widget cannot show it. This is a limitation of the kernel/UPower side, not of the widget.
