@@ -68,6 +68,7 @@ Item {
                     readonly property color text: Colours.palette.m3onSurface
                     readonly property color subtle: Colours.palette.m3onSurfaceVariant
                     readonly property color accent: Colours.palette.m3primary
+                    readonly property color secondary: Colours.palette.m3secondary
                     readonly property color warn: Colours.palette.m3error
                 }
             `, root, "controllerBatteryTheme");
@@ -81,6 +82,7 @@ Item {
     readonly property color textColor: theme ? theme.text : "#e6e6e6"
     readonly property color subtleColor: theme ? theme.subtle : "#a0a8b0"
     readonly property color accentColor: theme ? theme.accent : "#8ab4f8"
+    readonly property color secondaryColor: theme ? theme.secondary : "#5d8bf4"
     readonly property color warnColor: theme ? theme.warn : "#f28b82"
 
     function isController(d: var): bool {
@@ -300,7 +302,7 @@ Item {
                             layer.enabled: root.tintIcons
                             layer.effect: MultiEffect {
                                 colorization: 1.0
-                                colorizationColor: entry.low ? root.warnColor : root.trackColor
+                                colorizationColor: entry.low ? root.warnColor : root.secondaryColor
                             }
                         }
                     }
@@ -309,7 +311,7 @@ Item {
                         width: entry.cellWidth
                         horizontalAlignment: Text.AlignHCenter
                         text: Math.round(entry.level * 100) + "%" + (entry.charging ? " ⚡" : (entry.full ? " ⚡" : ""))
-                        color: entry.low ? root.warnColor : root.trackColor
+                        color: entry.low ? root.warnColor : root.secondaryColor
                         font.pixelSize: 15
                         font.bold: true
                     }
