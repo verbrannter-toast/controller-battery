@@ -23,7 +23,7 @@ The panel is movable across the whole desktop and saves its position across rebo
 [DesktopWidget.qml](https://github.com/verbrannter-toast/controller-battery/blob/main/DesktopWidget.qml) features a ton of customizing options between line 32 and 56 which should make adjusting to your preference easy. This is also where you can adjust the default position that double clicking resets to. If you want to use different icons to the default ones just replace them with the exact file name in `/icons`. 
 When just one or no controller is connected the panel simply resizes or hides completely.
 
-A ⚡ next to the percentage means the controller is charging, and a ✓ means it has finished charging.
+A 🗲 icon next to the percentage means the controller is charging. If the controller finished charging, the 🗲 icon stays for as long as it is still plugged in.
 
 ## Known limitations
 
