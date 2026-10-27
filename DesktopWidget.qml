@@ -226,6 +226,8 @@ Item {
                     readonly property real level: modelData.percentage
                     readonly property bool charging: modelData.state === UPowerDeviceState.Charging
                         || modelData.state === UPowerDeviceState.PendingCharge
+                    // Finished charging (e.g. a controller resting on its dock).
+                    readonly property bool full: modelData.state === UPowerDeviceState.FullyCharged
                     readonly property bool low: level <= root.lowThreshold && !charging
                     readonly property color ringColor: low ? root.warnColor : root.accentColor
 
@@ -306,7 +308,7 @@ Item {
                     Text {
                         width: entry.cellWidth
                         horizontalAlignment: Text.AlignHCenter
-                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " ⚡" : "")
+                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " ⚡" : (entry.full ? " ✓" : ""))
                         color: entry.low ? root.warnColor : root.textColor
                         font.pixelSize: 15
                         font.bold: true
