@@ -1,16 +1,30 @@
 {
   "id": "controller-battery",
-  "author": { "name": "Erik Mettner", "url": "https://github.com/verbrannter-toast" },
+  "author": { 
+    "name": "verbrannter-toast", 
+    "url": "https://github.com/verbrannter-toast" 
+  },
   "name": "Controller Battery",
   "description": "Desktop widget showing the battery level of connected game controllers (PS5, Steam, ...) as rings. Drag to move, double-click to reset.",
-  "version": "1.2.2",
+  "version": "1.3.0",
+  "license": "MIT",
   "type": "quickshell",
+  "restart": "true",
+  "keywords": [
+    "controller",
+    "battery",
+    "widget",
+    "desktop"
+  ],
   "ui": "main.qml",
   "icon": "sports_esports",
   "mediaurl": "Demo.png",
   "screenshots": [
     "Demo.png"
   ],
+  "shell-compat": {
+    "min": "2.6.3"
+  },
   "backgroundWidgets": [
     {
       "id": "controllerBattery",
