@@ -310,10 +310,16 @@ Item {
                     Text {
                         width: entry.cellWidth
                         horizontalAlignment: Text.AlignHCenter
-                        text: Math.round(entry.level * 100) + "%" + (entry.charging ? " 🗲" : entry.full ? " 🗲")
+                        text: Math.round(entry.level * 100) + "%" + ((entry.charging || entry.full) ? " 🗲" : "")
                         color: entry.low ? root.warnColor : root.secondaryColor
                         font.pixelSize: 15
                         font.bold: true
+                        // The charging symbol comes from a fallback font with a taller
+                        // line box. A fixed line height keeps this row the same height
+                        // with or without it, so the name below never shifts.
+                        lineHeight: 20
+                        lineHeightMode: Text.FixedHeight
+                        verticalAlignment: Text.AlignVCenter
                     }
 
                     Text {
