@@ -7,6 +7,10 @@
   "type": "quickshell",
   "ui": "main.qml",
   "icon": "sports_esports",
+  "mediaurl": "Demo.png",
+  "screenshots": [
+    "Demo.png"
+  ],
   "backgroundWidgets": [
     {
       "id": "controllerBattery",
