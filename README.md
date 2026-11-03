@@ -2,25 +2,12 @@ This is a plugin for [caelestia-kde](https://github.com/ladybug-me/caelestia-kde
 
 *Not affiliated with or endorsed by Sony Interactive Entertainment or Valve. PlayStation, PS5, DualSense and Steam are trademarks of their respective owners.*
 
-<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/08858252-2199-4fab-81d9-9fc9a56f5df1" />
-
-## Installation
-
-Requires [caelestia-kde](https://github.com/ladybug-me/caelestia-kde) (Plasma 6, Quickshell).
-
-Either install from the git URL in Nexus > Plugins, or manually:
-
-```bash
-git clone https://github.com/verbrannter-toast/controller-battery.git ~/.config/caelestia/plugins/controller-battery
-caelestia shell -d
-```
-
-Then enable the plugin in Nexus > Plugins if it isn't already.
+![Fullscreen-Demo](images/Fullscreen-Demo.png)
 
 ## Customizing
 
 The panel is movable across the whole desktop and saves its position across reboots. You can reset the position to the default by double clicking it.
-[DesktopWidget.qml](https://github.com/verbrannter-toast/controller-battery/blob/main/DesktopWidget.qml) features a ton of customizing options between line 32 and 56 which should make adjusting to your preference easy. This is also where you can adjust the default position that double clicking resets to. If you want to use different icons to the default ones just replace them with the exact file name in `/icons`. 
+[DesktopWidget.qml](DesktopWidget.qml) features a ton of customizing options between line 32 and 56 which should make adjusting to your preference easy. This is also where you can adjust the default position that double clicking resets to. If you want to use different icons to the default ones just replace them with the exact file name in `/icons`. 
 When just one or no controller is connected the panel simply resizes or hides completely.
 
 A 🗲 icon next to the percentage means the controller is charging. If the controller finished charging, the 🗲 icon stays for as long as it is still plugged in.
@@ -43,7 +30,3 @@ ls /sys/class/power_supply/
 ```
 
 If a controller is not listed there, the widget cannot show it. This is a limitation of the kernel/UPower side, not of the widget.
-
-### Steam controller shows level at 100% while charging
-
-When the puck is connected to the PC and the controller is connected to the puck (charging) the battery level will always show 100%. This might be something detectable so the plugin can the show the charging status but I haven't looked into doing that yet.
