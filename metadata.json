@@ -16,7 +16,6 @@
     "widget",
     "desktop"
   ],
-  "ui": "main.qml",
   "icon": "sports_esports",
   "mediaurl": "images/Demo.png",
   "screenshots": [
